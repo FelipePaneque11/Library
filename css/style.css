@@ -1,0 +1,402 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 7%;
+}
+
+/* Variables */
+:root {
+    --primary-green: #1abc9c;
+    --navy: #34495e;
+    --dark-gray: #7f8c8d;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .title {
+    font-size: 1.8rem;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+}
+
+.header ul li {
+    margin: 0 1rem;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header ul li a:hover {
+    color: var(--primary-green);
+}
+
+/* Containers */
+.container {
+    background-color: var(--white);
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 90%;
+}
+
+/* Titles */
+.section-title {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/*Filter section toggle*/
+.filterSection {
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Full width container */
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to next line if they overflow */
+    gap: 10px; /* Spacing between items */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.filterSection p {
+    flex-basis: 100%; /* Take full row width */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.filterSection input[type="radio"] {
+    margin-right: 5px; /* Spacing between radio and label */
+}
+
+.filterSection label {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer; /* Pointer for better UX */
+    display: flex; /* Align radio button and text */
+    align-items: center;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.filterSection input[type="radio"]:hover + label {
+    background-color: #f0f0f0; /* Light gray on hover */
+    border-color: #ccc; /* Darker border */
+}
+
+.filterSection input[type="radio"]:checked + label {
+    background-color: #0056b3; /* Accent color for selected */
+    color: #fff;
+    font-weight: bold;
+    border-color: #0056b3; /* Match border with background */
+}
+
+.filterSection {
+    display: none; /* Hidden by default */
+}
+
+.filterSection.active {
+    display: flex; /* Show when active */
+}
+
+@media (max-width: 768px) {
+    .filterSection {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .filterSection label {
+        flex-basis: 100%; /* Make labels span full width */
+    }
+}
+
+/* Update and Delete Section Styling */
+.updateSection, .deleteSection {
+    display: none; /* Hidden by default */
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fdfdfd; /* Neutral background for form sections */
+    border: 1px solid #ccc; /* Subtle border for separation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    max-width: 600px; /* Limit width for readability */
+    width: 100%; /* Full width in narrow screens */
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out; /* Smooth open/close animation */
+}
+
+.updateSection.active, .deleteSection.active {
+    display: block; /* Show when active */
+}
+
+.updateSection p, .deleteSection p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.updateSection div, .deleteSection div {
+    display: flex;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center; /* Center align inputs */
+}
+
+.updateSection label, .deleteSection label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    margin-right: 5px;
+    min-width: 120px; /* Consistent label width */
+    text-align: right;
+}
+
+.updateSection input, .deleteSection input {
+    flex: 1; /* Input takes the remaining space */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.updateSection input:focus, .deleteSection input:focus {
+    border-color: #0056b3; /* Accent color for focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+}
+
+.updateSection button, .deleteSection button {
+    background-color: #0056b3; /* Primary color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.updateSection button:hover, .deleteSection button:hover {
+    background-color: #003f88; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.updateSection button:active, .deleteSection button:active {
+    background-color: #002f66; /* Even darker shade on click */
+    transform: translateY(0); /* Return to original position */
+}
+
+.hidden {
+    display: none; /* Utility class to hide elements */
+}
+
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.search-section input {
+    width: 70%;
+    max-width: 500px;
+    padding: 0.8rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-section button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-section button:hover {
+    background-color: #16a085;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.btn  {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2c3e50;
+}
+
+/* Form */
+.book-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.book-form.hidden {
+    display: none;
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 1rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.book-form button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.book-form button:hover {
+    background-color: #16a085;
+}
+
+/* Table Section */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    border: 1px solid var(--dark-gray);
+    padding: 0.8rem;
+    text-align: center;
+}
+
+table th {
+    background-color: var(--navy);
+    color: var(--white);
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f4f4f4;
+}
+
+
+.update-btn {
+    background-color: var(--primary-green);
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.update-btn:hover {
+    background-color: #16a085;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: var(--white);
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer a{
+    color: var(--primary-green);
+}

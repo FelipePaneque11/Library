@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Admin</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <h1 class="title">Library Admin</h1>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Manage Books Section -->
+        <section class="container">
+            <h2 class="section-title">Manage Books</h2>
+    
+            <!-- Search Bar -->
+            <div class="search-section">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by title, author, or genre"
+                >
+                <button onclick="searchBooks()">Search</button>
+            </div>
+    
+            <!-- Section Book Button -->
+            <div class="button-container">
+                <button class="btn" onclick="toggleFormAdd()">Add Book</button>
+                <button class="btn" onclick="toggleFormFilter()">Filter</button>
+                <button class="update-btn btn" onclick="toggleFormUpdate()">Update Book</button>
+                <button class="delete-btn btn" onclick="toggleFormDelete()">Delete Book</button>    
+            </div>
+    
+            <!-- Form to Add Books TOGGLE -->
+            <form class="book-form hidden" id="bookForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" name="genre" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="publicationDate">Publication Date</label>
+                    <input type="date" id="publicationDate" name="publicationDate" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        
+        <!-- Filter Toggle -->
+        <div class="filterSection container">
+            <p>Select the Genre</p>
+            <div>
+                <input type="radio" id="Dystopian" name="genre" value="Dystopian">
+                <label for="Dystopian">Dystopian</label>
+            </div>
+            <div>
+                <input type="radio" id="Fiction" name="genre" value="Fiction">
+                <label for="Fiction">Fiction</label>
+            </div>
+            <div>
+                <input type="radio" id="Romance" name="genre" value="Romance">
+                <label for="Romance">Romance</label>
+            </div>
+            <div>
+                <input type="radio" id="Adventure" name="genre" value="Adventure">
+                <label for="Adventure">Adventure</label>
+            </div>
+            <div>
+                <input type="radio" id="Fantasy" name="genre" value="Fantasy">
+                <label for="Fantasy">Fantasy</label>
+            </div>
+            <div>
+                <input type="radio" id="Horror" name="genre" value="Horror">
+                <label for="Horror">Horror</label>
+            </div>
+            <div>
+                <input type="radio" id="Historical-Fiction" name="genre" value="Historical Fiction">
+                <label for="Historical-Fiction">Historical Fiction</label>
+            </div>
+            <div>
+                <input type="radio" id="Science-Fiction" name="genre" value="Science Fiction">
+                <label for="Science-Fiction">Science Fiction</label>
+            </div>
+            <div>
+                <input type="radio" id="Tragedy" name="genre" value="Tragedy">
+                <label for="Tragedy">Tragedy</label>
+            </div>
+        </div>
+
+        <!-- Update Toggle -->
+        <div class="updateSection container hidden">
+            <p>Update Book Details</p>
+            <div>
+                <label for="updateId">Book ID:</label>
+                <input type="text" id="updateId" placeholder="Enter Book ID">
+                <button onclick="searchBook()">Search</button>
+            </div>
+            <div id="updateForm" class="hidden">
+                <div>
+                    <label for="updateTitle">Title:</label>
+                    <input type="text" id="updateTitle">
+                </div>
+                <div>
+                    <label for="updateGenre">Genre:</label>
+                    <input type="text" id="updateGenre">
+                </div>
+                <div>
+                    <label for="updateAuthor">Author:</label>
+                    <input type="text" id="updateAuthor">
+                </div>
+                <div>
+                    <label for="updateDate">Date of Publication:</label>
+                    <input type="date" id="updateDate">
+                </div>
+                <button onclick="updateBook()">Update</button>
+            </div>
+        </div>
+
+        <!-- Delete Toggle -->
+        <div class="deleteSection container hidden">
+            <p>Delete a Book</p>
+            <div>
+                <label for="deleteId">Book ID:</label>
+                <input type="text" id="deleteId" placeholder="Enter Book ID">
+                <button onclick="deleteBook()">Delete</button>
+            </div>
+        </div>
+
+            
+        <!-- Table Section -->
+        <section class="container">
+            <h3 class="section-title">Books List</h3>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Author</th>
+                        <th>Publication Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookTableList">
+                    <tr>
+                        <td>1</td>
+                        <td>Harry Potter and the Philosopher's Stone</td>
+                        <td>Fantasy</td>
+                        <td>J.K. Rowling</td>
+                        <td>1997-06-26</td>
+                        <td>Reserved</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Library Admin. Designed with care by <a href="https://github.com/FelipePaneque11">Felipe Paneque</a>.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>

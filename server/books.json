@@ -1,0 +1,794 @@
+[
+  {
+    "ID": 2,
+    "Title": "Bible",
+    "Genre": "Religious",
+    "Author": "Jesus",
+    "PublicationDate": "2024-11-26",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 3,
+    "Title": "The Great Gatsby",
+    "Genre": "Tragedy",
+    "Author": "F. Scott Fitzgerald",
+    "PublicationDate": "1925-04-10",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 4,
+    "Title": "Pride and Prejudice",
+    "Genre": "Romance",
+    "Author": "Jane Austen",
+    "PublicationDate": "1813-01-28",
+    "Status": "Available"
+  },
+  {
+    "ID": 5,
+    "Title": "Moby-Dick",
+    "Genre": "Adventure",
+    "Author": "Herman Melville",
+    "PublicationDate": "1851-10-18",
+    "Status": "Available"
+  },
+  {
+    "ID": 6,
+    "Title": "War and Peace",
+    "Genre": "Historical",
+    "Author": "Leo Tolstoy",
+    "PublicationDate": "1869-01-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 7,
+    "Title": "The Catcher in the Rye",
+    "Genre": "Fiction",
+    "Author": "J.D. Salinger",
+    "PublicationDate": "1951-07-16",
+    "Status": "Available"
+  },
+  {
+    "ID": 8,
+    "Title": "Brave New World",
+    "Genre": "Dystopian",
+    "Author": "Aldous Huxley",
+    "PublicationDate": "1932-08-01",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 9,
+    "Title": "The Hobbit",
+    "Genre": "Fantasy",
+    "Author": "J.R.R. Tolkien",
+    "PublicationDate": "1937-09-21",
+    "Status": "Available"
+  },
+  {
+    "ID": 10,
+    "Title": "Fahrenheit 451",
+    "Genre": "Dystopian",
+    "Author": "Ray Bradbury",
+    "PublicationDate": "1953-10-19",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 11,
+    "Title": "Crime and Punishment",
+    "Genre": "Psychological",
+    "Author": "Fyodor Dostoevsky",
+    "PublicationDate": "1866-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 12,
+    "Title": "The Odyssey",
+    "Genre": "Epic Poetry",
+    "Author": "Homer",
+    "PublicationDate": "800 BC",
+    "Status": "Available"
+  },
+  {
+    "ID": 13,
+    "Title": "The Divine Comedy",
+    "Genre": "Epic Poetry",
+    "Author": "Dante Alighieri",
+    "PublicationDate": "1320-01-01",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 14,
+    "Title": "Anna Karenina",
+    "Genre": "Novel",
+    "Author": "Leo Tolstoy",
+    "PublicationDate": "1878-01-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 15,
+    "Title": "Les Misérables",
+    "Genre": "Historical Fiction",
+    "Author": "Victor Hugo",
+    "PublicationDate": "1862-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 16,
+    "Title": "The Picture of Dorian Gray",
+    "Genre": "Philosophical Fiction",
+    "Author": "Oscar Wilde",
+    "PublicationDate": "1890-06-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 17,
+    "Title": "The Brothers Karamazov",
+    "Genre": "Philosophical Fiction",
+    "Author": "Fyodor Dostoevsky",
+    "PublicationDate": "1880-11-01",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 18,
+    "Title": "Dracula",
+    "Genre": "Gothic Horror",
+    "Author": "Bram Stoker",
+    "PublicationDate": "1897-05-26",
+    "Status": "Available"
+  },
+  {
+    "ID": 19,
+    "Title": "The Lord of the Rings: The Fellowship of the Ring",
+    "Genre": "Fantasy",
+    "Author": "J.R.R. Tolkien",
+    "PublicationDate": "1954-07-29",
+    "Status": "Available"
+  },
+  {
+    "ID": 20,
+    "Title": "The Shining",
+    "Genre": "Horror",
+    "Author": "Stephen King",
+    "PublicationDate": "1977-01-28",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 21,
+    "Title": "The Chronicles of Narnia",
+    "Genre": "Fantasy",
+    "Author": "C.S. Lewis",
+    "PublicationDate": "1950-10-16",
+    "Status": "Available"
+  },
+  {
+    "ID": 22,
+    "Title": "The Catcher in the Rye",
+    "Genre": "Fiction",
+    "Author": "J.D. Salinger",
+    "PublicationDate": "1951-07-16",
+    "Status": "Available"
+  },
+  {
+    "ID": 23,
+    "Title": "The Book Thief",
+    "Genre": "Historical Fiction",
+    "Author": "Markus Zusak",
+    "PublicationDate": "2005-03-14",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 24,
+    "Title": "The Hunger Games",
+    "Genre": "Dystopian",
+    "Author": "Suzanne Collins",
+    "PublicationDate": "2008-09-14",
+    "Status": "Available"
+  },
+  {
+    "ID": 25,
+    "Title": "The Alchemist",
+    "Genre": "Adventure",
+    "Author": "Paulo Coelho",
+    "PublicationDate": "1988-11-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 26,
+    "Title": "The Kite Runner",
+    "Genre": "Drama",
+    "Author": "Khaled Hosseini",
+    "PublicationDate": "2003-05-29",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 27,
+    "Title": "The Road",
+    "Genre": "Dystopian",
+    "Author": "Cormac McCarthy",
+    "PublicationDate": "2006-09-26",
+    "Status": "Available"
+  },
+  {
+    "ID": 28,
+    "Title": "The Outsiders",
+    "Genre": "Fiction",
+    "Author": "S.E. Hinton",
+    "PublicationDate": "1967-04-24",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 29,
+    "Title": "Slaughterhouse-Five",
+    "Genre": "Science Fiction",
+    "Author": "Kurt Vonnegut",
+    "PublicationDate": "1969-03-31",
+    "Status": "Available"
+  },
+  {
+    "ID": 30,
+    "Title": "The Handmaid's Tale",
+    "Genre": "Dystopian",
+    "Author": "Margaret Atwood",
+    "PublicationDate": "1985-09-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 31,
+    "Title": "The Secret Garden",
+    "Genre": "Children's Fiction",
+    "Author": "Frances Hodgson Burnett",
+    "PublicationDate": "1911-08-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 32,
+    "Title": "The Bell Jar",
+    "Genre": "Fiction",
+    "Author": "Sylvia Plath",
+    "PublicationDate": "1963-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 33,
+    "Title": "The Fault in Our Stars",
+    "Genre": "Romance",
+    "Author": "John Green",
+    "PublicationDate": "2012-01-10",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 34,
+    "Title": "The Shining",
+    "Genre": "Horror",
+    "Author": "Stephen King",
+    "PublicationDate": "1977-01-28",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 35,
+    "Title": "The Help",
+    "Genre": "Historical Fiction",
+    "Author": "Kathryn Stockett",
+    "PublicationDate": "2009-02-10",
+    "Status": "Available"
+  },
+  {
+    "ID": 36,
+    "Title": "Gone with the Wind",
+    "Genre": "Historical Romance",
+    "Author": "Margaret Mitchell",
+    "PublicationDate": "1936-06-30",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 37,
+    "Title": "Catch-22",
+    "Genre": "Satire",
+    "Author": "Joseph Heller",
+    "PublicationDate": "1961-11-10",
+    "Status": "Available"
+  },
+  {
+    "ID": 38,
+    "Title": "The Sun Also Rises",
+    "Genre": "Fiction",
+    "Author": "Ernest Hemingway",
+    "PublicationDate": "1926-10-22",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 39,
+    "Title": "A Tale of Two Cities",
+    "Genre": "Historical Fiction",
+    "Author": "Charles Dickens",
+    "PublicationDate": "1859-04-30",
+    "Status": "Available"
+  },
+  {
+    "ID": 40,
+    "Title": "The Three Musketeers",
+    "Genre": "Adventure",
+    "Author": "Alexandre Dumas",
+    "PublicationDate": "1844-03-14",
+    "Status": "Available"
+  },
+  {
+    "ID": 41,
+    "Title": "Wuthering Heights",
+    "Genre": "Romance",
+    "Author": "Emily Brontë",
+    "PublicationDate": "1847-12-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 42,
+    "Title": "Frankenstein",
+    "Genre": "Gothic Horror",
+    "Author": "Mary Shelley",
+    "PublicationDate": "1818-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 43,
+    "Title": "Dracula",
+    "Genre": "Gothic Horror",
+    "Author": "Bram Stoker",
+    "PublicationDate": "1897-05-26",
+    "Status": "Available"
+  },
+  {
+    "ID": 44,
+    "Title": "The Secret History",
+    "Genre": "Thriller",
+    "Author": "Donna Tartt",
+    "PublicationDate": "1992-09-01",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 45,
+    "Title": "The Night Circus",
+    "Genre": "Fantasy",
+    "Author": "Erin Morgenstern",
+    "PublicationDate": "2011-09-13",
+    "Status": "Available"
+  },
+  {
+    "ID": 46,
+    "Title": "The Goldfinch",
+    "Genre": "Fiction",
+    "Author": "Donna Tartt",
+    "PublicationDate": "2013-10-22",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 47,
+    "Title": "The Maze Runner",
+    "Genre": "Science Fiction",
+    "Author": "James Dashner",
+    "PublicationDate": "2009-10-06",
+    "Status": "Available"
+  },
+  {
+    "ID": 48,
+    "Title": "Divergent",
+    "Genre": "Dystopian",
+    "Author": "Veronica Roth",
+    "PublicationDate": "2011-04-25",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 49,
+    "Title": "Twilight",
+    "Genre": "Romance",
+    "Author": "Stephenie Meyer",
+    "PublicationDate": "2005-10-05",
+    "Status": "Available"
+  },
+  {
+    "ID": 50,
+    "Title": "The Girl on the Train",
+    "Genre": "Thriller",
+    "Author": "Paula Hawkins",
+    "PublicationDate": "2015-01-13",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 51,
+    "Title": "The Hunger Games",
+    "Genre": "Dystopian",
+    "Author": "Suzanne Collins",
+    "PublicationDate": "2008-09-14",
+    "Status": "Available"
+  },
+  {
+    "ID": 52,
+    "Title": "The Girl with the Dragon Tattoo",
+    "Genre": "Crime Thriller",
+    "Author": "Stieg Larsson",
+    "PublicationDate": "2005-08-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 53,
+    "Title": "The Help",
+    "Genre": "Historical Fiction",
+    "Author": "Kathryn Stockett",
+    "PublicationDate": "2009-02-10",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 54,
+    "Title": "Murder on the Orient Express",
+    "Genre": "Mystery",
+    "Author": "Agatha Christie",
+    "PublicationDate": "1934-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 55,
+    "Title": "Harry Potter and the Sorcerer's Stone",
+    "Genre": "Fantasy",
+    "Author": "J.K. Rowling",
+    "PublicationDate": "1997-06-26",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 56,
+    "Title": "The Fault in Our Stars",
+    "Genre": "Romance",
+    "Author": "John Green",
+    "PublicationDate": "2012-01-10",
+    "Status": "Available"
+  },
+  {
+    "ID": 57,
+    "Title": "The House of the Seven Gables",
+    "Genre": "Gothic Fiction",
+    "Author": "Nathaniel Hawthorne",
+    "PublicationDate": "1851-04-01",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 58,
+    "Title": "The Call of the Wild",
+    "Genre": "Adventure",
+    "Author": "Jack London",
+    "PublicationDate": "1903-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 59,
+    "Title": "The Secret Garden",
+    "Genre": "Children's Fiction",
+    "Author": "Frances Hodgson Burnett",
+    "PublicationDate": "1911-08-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 60,
+    "Title": "The Cuckoo's Calling",
+    "Genre": "Mystery",
+    "Author": "Robert Galbraith",
+    "PublicationDate": "2013-04-18",
+    "Status": "Available"
+  },
+  {
+    "ID": 61,
+    "Title": "The Night Manager",
+    "Genre": "Thriller",
+    "Author": "John le Carré",
+    "PublicationDate": "1993-06-15",
+    "Status": "Available"
+  },
+  {
+    "ID": 62,
+    "Title": "The Girl on the Train",
+    "Genre": "Thriller",
+    "Author": "Paula Hawkins",
+    "PublicationDate": "2015-01-13",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 63,
+    "Title": "The Whispering Door",
+    "Genre": "Fantasy",
+    "Author": "T.J. Klune",
+    "PublicationDate": "2021-09-21",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 64,
+    "Title": "The Night Circus",
+    "Genre": "Fantasy",
+    "Author": "Erin Morgenstern",
+    "PublicationDate": "2011-09-13",
+    "Status": "Available"
+  },
+  {
+    "ID": 65,
+    "Title": "A Little Life",
+    "Genre": "Drama",
+    "Author": "Hanya Yanagihara",
+    "PublicationDate": "2015-03-10",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 66,
+    "Title": "Big Little Lies",
+    "Genre": "Mystery",
+    "Author": "Liane Moriarty",
+    "PublicationDate": "2014-07-29",
+    "Status": "Available"
+  },
+  {
+    "ID": 67,
+    "Title": "The Book Thief",
+    "Genre": "Historical Fiction",
+    "Author": "Markus Zusak",
+    "PublicationDate": "2005-03-14",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 68,
+    "Title": "The Giver",
+    "Genre": "Dystopian",
+    "Author": "Lois Lowry",
+    "PublicationDate": "1993-04-26",
+    "Status": "Available"
+  },
+  {
+    "ID": 69,
+    "Title": "The Great Gatsby",
+    "Genre": "Tragedy",
+    "Author": "F. Scott Fitzgerald",
+    "PublicationDate": "1925-04-10",
+    "Status": "Available"
+  },
+  {
+    "ID": 70,
+    "Title": "The Catcher in the Rye",
+    "Genre": "Fiction",
+    "Author": "J.D. Salinger",
+    "PublicationDate": "1951-07-16",
+    "Status": "Available"
+  },
+  {
+    "ID": 71,
+    "Title": "1984",
+    "Genre": "Dystopian",
+    "Author": "George Orwell",
+    "PublicationDate": "1949-06-08",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 72,
+    "Title": "Brave New World",
+    "Genre": "Dystopian",
+    "Author": "Aldous Huxley",
+    "PublicationDate": "1932-08-30",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 73,
+    "Title": "The Road",
+    "Genre": "Post-apocalyptic Fiction",
+    "Author": "Cormac McCarthy",
+    "PublicationDate": "2006-09-26",
+    "Status": "Available"
+  },
+  {
+    "ID": 74,
+    "Title": "The Shining",
+    "Genre": "Horror",
+    "Author": "Stephen King",
+    "PublicationDate": "1977-01-28",
+    "Status": "Available"
+  },
+  {
+    "ID": 75,
+    "Title": "The Girl with the Louding Voice",
+    "Genre": "Fiction",
+    "Author": "Abi Daré",
+    "PublicationDate": "2020-08-04",
+    "Status": "Available"
+  },
+  {
+    "ID": 76,
+    "Title": "The Silent Patient",
+    "Genre": "Thriller",
+    "Author": "Alex Michaelides",
+    "PublicationDate": "2019-02-05",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 77,
+    "Title": "The Invisible Man",
+    "Genre": "Science Fiction",
+    "Author": "H.G. Wells",
+    "PublicationDate": "1897-02-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 78,
+    "Title": "The Outsiders",
+    "Genre": "Fiction",
+    "Author": "S.E. Hinton",
+    "PublicationDate": "1967-04-24",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 79,
+    "Title": "The Bell Jar",
+    "Genre": "Psychological Fiction",
+    "Author": "Sylvia Plath",
+    "PublicationDate": "1963-01-14",
+    "Status": "Available"
+  },
+  {
+    "ID": 80,
+    "Title": "Little Women",
+    "Genre": "Classic Fiction",
+    "Author": "Louisa May Alcott",
+    "PublicationDate": "1868-09-30",
+    "Status": "Available"
+  },
+  {
+    "ID": 81,
+    "Title": "The Lord of the Rings: The Fellowship of the Ring",
+    "Genre": "Fantasy",
+    "Author": "J.R.R. Tolkien",
+    "PublicationDate": "1954-07-29",
+    "Status": "Available"
+  },
+  {
+    "ID": 82,
+    "Title": "The Hobbit",
+    "Genre": "Fantasy",
+    "Author": "J.R.R. Tolkien",
+    "PublicationDate": "1937-09-21",
+    "Status": "Available"
+  },
+  {
+    "ID": 83,
+    "Title": "The Chronicles of Narnia: The Lion, the Witch, and the Wardrobe",
+    "Genre": "Fantasy",
+    "Author": "C.S. Lewis",
+    "PublicationDate": "1950-10-16",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 84,
+    "Title": "The Picture of Dorian Gray",
+    "Genre": "Gothic Fiction",
+    "Author": "Oscar Wilde",
+    "PublicationDate": "1890-07-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 85,
+    "Title": "The Picture of Dorian Gray",
+    "Genre": "Gothic Fiction",
+    "Author": "Oscar Wilde",
+    "PublicationDate": "1890-07-01",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 86,
+    "Title": "A Wrinkle in Time",
+    "Genre": "Science Fiction",
+    "Author": "Madeleine L'Engle",
+    "PublicationDate": "1962-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 87,
+    "Title": "The Book Thief",
+    "Genre": "Historical Fiction",
+    "Author": "Markus Zusak",
+    "PublicationDate": "2005-03-14",
+    "Status": "Available"
+  },
+  {
+    "ID": 88,
+    "Title": "The Hunger Games",
+    "Genre": "Dystopian",
+    "Author": "Suzanne Collins",
+    "PublicationDate": "2008-09-14",
+    "Status": "Available"
+  },
+  {
+    "ID": 89,
+    "Title": "The Great Gatsby",
+    "Genre": "Tragedy",
+    "Author": "F. Scott Fitzgerald",
+    "PublicationDate": "1925-04-10",
+    "Status": "Available"
+  },
+  {
+    "ID": 90,
+    "Title": "Brave New World",
+    "Genre": "Dystopian",
+    "Author": "Aldous Huxley",
+    "PublicationDate": "1932-08-30",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 91,
+    "Title": "1984",
+    "Genre": "Dystopian",
+    "Author": "George Orwell",
+    "PublicationDate": "1949-06-08",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 92,
+    "Title": "Moby-Dick",
+    "Genre": "Adventure",
+    "Author": "Herman Melville",
+    "PublicationDate": "1851-10-18",
+    "Status": "Available"
+  },
+  {
+    "ID": 93,
+    "Title": "War and Peace",
+    "Genre": "Historical Fiction",
+    "Author": "Leo Tolstoy",
+    "PublicationDate": "1869-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 94,
+    "Title": "Les Misérables",
+    "Genre": "Historical Fiction",
+    "Author": "Victor Hugo",
+    "PublicationDate": "1862-01-01",
+    "Status": "Reserved"
+  },
+  {
+    "ID": 95,
+    "Title": "Crime and Punishment",
+    "Genre": "Psychological Fiction",
+    "Author": "Fyodor Dostoevsky",
+    "PublicationDate": "1866-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 96,
+    "Title": "The Odyssey",
+    "Genre": "Epic Poetry",
+    "Author": "Homer",
+    "PublicationDate": "700 BC",
+    "Status": "Available"
+  },
+  {
+    "ID": 97,
+    "Title": "The Divine Comedy",
+    "Genre": "Epic Poetry",
+    "Author": "Dante Alighieri",
+    "PublicationDate": "1320-01-01",
+    "Status": "Available"
+  },
+  {
+    "ID": 98,
+    "Title": "The Iliad",
+    "Genre": "Epic Poetry",
+    "Author": "Homer",
+    "PublicationDate": "750 BC",
+    "Status": "Borrowed"
+  },
+  {
+    "ID": 99,
+    "Title": "Don Quixote",
+    "Genre": "Novel",
+    "Author": "Miguel de Cervantes",
+    "PublicationDate": "1605-01-16",
+    "Status": "Available"
+  },
+  {
+    "ID": 100,
+    "Title": "The Brothers Karamazov",
+    "Genre": "Philosophical Novel",
+    "Author": "Fyodor Dostoevsky",
+    "PublicationDate": "1880-11-01",
+    "Status": "Available"
+  }
+]
