@@ -24,47 +24,52 @@
     
             <!-- Search Bar -->
             <div class="search-section">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search by title, author, or genre"
-                >
+                <input type="text" id="searchInput" placeholder="Search by title, author, or genre">
                 <button onclick="searchBooks()">Search</button>
             </div>
     
             <!-- Section Book Button -->
             <div class="button-container">
-                <button class="btn" onclick="toggleFormAdd()">Add Book</button>
-                <button class="btn" onclick="toggleFormFilter()">Filter</button>
+                <button class="btn" id="addBtn" onclick="toggleFormAdd()">Add Book</button>
+                <button class="btn" id="filterBtn" onclick="toggleFormFilter()">Filter</button>
                 <button class="update-btn btn" onclick="toggleFormUpdate()">Update Book</button>
                 <button class="delete-btn btn" onclick="toggleFormDelete()">Delete Book</button>    
             </div>
-    
-            <!-- Form to Add Books TOGGLE -->
-            <form class="book-form hidden" id="bookForm">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" required>
-                </div>
-                <div class="form-group">
-                    <label for="genre">Genre</label>
-                    <input type="text" id="genre" name="genre" required>
-                </div>
-                <div class="form-group">
-                    <label for="author">Author</label>
-                    <input type="text" id="author" name="author" required>
-                </div>
-                <div class="form-group">
-                    <label for="publicationDate">Publication Date</label>
-                    <input type="date" id="publicationDate" name="publicationDate" required>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
         </section>
 
+
+            <!-- Form to Add Books TOGGLE -->
+             <div class="book-form container hidden">
+                <form id="bookForm">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre" name="genre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="publicationDate">Publication Date</label>
+                        <input type="date" id="publicationDate" name="publicationDate" required>
+                    </div>
+                    <label for="status">Status:</label>
+                    <select id="status">
+                        <option value="Available">Available</option>
+                        <option value="Reserved">Reserved</option>
+                        <option value="Borrowed">Borrowed</option>
+                    </select>
+    
+                    <button type="submit" onclick="addBook()">Submit</button>
+                </form>
+             </div>
         
         <!-- Filter Toggle -->
-        <div class="filterSection container">
+        <div class="filterSection container hidden">
             <p>Select the Genre</p>
             <div>
                 <input type="radio" id="Dystopian" name="genre" value="Dystopian">
@@ -102,6 +107,8 @@
                 <input type="radio" id="Tragedy" name="genre" value="Tragedy">
                 <label for="Tragedy">Tragedy</label>
             </div>
+            <button type="submit" class="filter-btn" onclick="filterBooks()">Filter</button>
+            <button type="submit" class="reset-btn" onclick="resetFilter()">Reset</button>
         </div>
 
         <!-- Update Toggle -->
@@ -159,14 +166,6 @@
                     </tr>
                 </thead>
                 <tbody id="bookTableList">
-                    <tr>
-                        <td>1</td>
-                        <td>Harry Potter and the Philosopher's Stone</td>
-                        <td>Fantasy</td>
-                        <td>J.K. Rowling</td>
-                        <td>1997-06-26</td>
-                        <td>Reserved</td>
-                    </tr>
                 </tbody>
             </table>
         </section>

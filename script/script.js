@@ -12,57 +12,67 @@ fetch('/books')
     });
 
 // Function to populate the table
-function populateTable(books) {
-    const tableBody = document.getElementById('bookTableList');
-    tableBody.innerHTML = ''; // Clear existing rows
+function populateTable(bookList) {
+    const tableBody = document.getElementById("bookTableList");
+    tableBody.innerHTML = ""; // Clear existing rows
 
-    books.forEach(book => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${book.ID}</td>
-            <td>${book.Title}</td>
-            <td>${book.Genre}</td>
-            <td>${book.Author}</td>
-            <td>${book.PublicationDate}</td>
-            <td>${book.Status}</td>
-        `;
-        tableBody.appendChild(row);
-    });
-}
+    if (bookList.length > 0) {
+        bookList.forEach(book => {
+            const row = document.createElement("tr");
 
+            row.innerHTML = `
+                <td>${book.ID}</td>
+                <td>${book.Title}</td>
+                <td>${book.Genre}</td>
+                <td>${book.Author}</td>
+                <td>${book.PublicationDate}</td>
+                <td>${book.Status}</td>
+            `;
 
-function toggleFormAdd() {
-    var button = document.getElementsByClassName("btn")[0]; // Get the button element
-    var form = document.getElementsByClassName("book-form")[0]; // Get the form element
-    //click to show form
-    if (button.classList.contains("active")) {
-        form.classList.add("hidden");
-        button.classList.remove("active");
-    } else { //click to hide form
-        form.classList.remove("hidden");
-        button.classList.add("active");
+            tableBody.appendChild(row);
+        });
+    } else {
+        const emptyRow = document.createElement("tr");
+        emptyRow.innerHTML = `<td colspan="6" style="text-align: center;">No books to display</td>`;
+        tableBody.appendChild(emptyRow);
     }
 }
 
-function toggleFormFilter() {
-    // Get the filter section
-    var toggleFilter = document.querySelector(".filterSection");
-    var buttonFilter = document.getElementsByClassName("btn")[1];
+function toggleFormAdd() {
+    const buttonAdd = document.querySelector("#addBtn");
+    const toggleAdd = document.querySelector(".book-form");
+    const otherSections = document.querySelectorAll(".updateSection, .deleteSection, .filterSection");
 
-    // Toggle the 'active' class for the filter section
+    if (toggleAdd.classList.contains("active")) {
+        toggleAdd.classList.remove("active");
+        buttonAdd.classList.remove("active");
+    } else {
+        otherSections.forEach(section => section.classList.remove("active"));
+        toggleAdd.classList.add("active");
+        buttonAdd.classList.add("active");
+    }
+}
+
+
+
+function toggleFormFilter() {
+    var buttonFilter = document.querySelector("#filterBtn");
+    var toggleFilter = document.querySelector(".filterSection");
+    const otherSections = document.querySelectorAll(".updateSection, .deleteSection, .book-form");
+
     if (toggleFilter.classList.contains("active")) {
         toggleFilter.classList.remove("active");
         buttonFilter.classList.remove("active");
     } else {
+        otherSections.forEach(section => section.classList.remove("active"));
         toggleFilter.classList.add("active");
         buttonFilter.classList.add("active");
     }
 }
 
-//UPDATE TOGGLE
 function toggleFormUpdate() {
     const updateSection = document.querySelector(".updateSection");
-    const otherSections = document.querySelectorAll(".filterSection, .deleteSection");
+    const otherSections = document.querySelectorAll(".filterSection, .deleteSection, .book-form");
 
     if (updateSection.classList.contains("active")) {
         updateSection.classList.remove("active");
@@ -72,10 +82,9 @@ function toggleFormUpdate() {
     }
 }
 
-//DELETE toggle
 function toggleFormDelete() {
     const deleteSection = document.querySelector(".deleteSection");
-    const otherSections = document.querySelectorAll(".filterSection, .updateSection");
+    const otherSections = document.querySelectorAll(".filterSection, .updateSection, .book-form");
 
     if (deleteSection.classList.contains("active")) {
         deleteSection.classList.remove("active");
@@ -85,52 +94,100 @@ function toggleFormDelete() {
     }
 }
 
+
 // Delete Book
 function deleteBook() {
-    const bookId = parseInt(document.getElementById("updateId").value.trim(), 10);
-    const bookIndex = books.findIndex(b => b.ID === bookId); // Use parseInt to ensure correct type comparison
+    const bookIdInput = document.getElementById("deleteId").value.trim();
+    const bookId = isNaN(bookIdInput) ? null : parseInt(bookIdInput, 10);
 
-    if (bookIndex !== -1) {
-        const book = books[bookIndex]; // Get the book object using the index
-        books.splice(bookIndex, 1); // Remove the book from the local array
+    // Debugging: Log the ID from input
+    console.log("Book ID entered:", bookId);
 
-        // Send a DELETE request to the server to remove the book from the database
-        fetch(`/books/${bookId}`, { method: 'DELETE' })
-            .then(response => {
-                if (response.ok) {
-                    alert('Book deleted successfully!');
-                    populateTable(books); // Refresh table with updated books
-                } else {
-                    console.error('Failed to delete book on the server.');
-                }
-            })
-            .catch(error => {
-                console.error("Error deleting book on server:", error);
-            });
+    if (!bookId) {
+        alert("Invalid ID! Please enter a valid numeric ID.");
+        return;
+    }
+
+    // Send a DELETE request to the server
+    fetch(`/books/${bookId}`, { method: 'DELETE' })
+        .then(response => {
+            if (response.ok) {
+                alert('Book deleted successfully!');
+                // Fetch updated data from the server
+                fetch('/books')
+                    .then(res => res.json())
+                    .then(updatedBooks => {
+                        books = updatedBooks; // Update local `books` array
+                        populateTable(books); // Refresh table with updated books
+                    })
+                    .catch(error => {
+                        console.error("Error fetching updated books:", error);
+                    });
+            } else if (response.status === 404) {
+                alert('Book not found on the server.');
+            } else {
+                alert('Failed to delete book.');
+            }
+        })
+        .catch(error => {
+            console.error("Error deleting book on server:", error);
+        });
+}
+
+//Filter Books by Genre
+function filterBooks() {
+    // Get the selected genre from the radio buttons
+    const selectedGenre = document.querySelector('input[name="genre"]:checked');
+    
+    if (selectedGenre) {
+        const genreValue = selectedGenre.value.trim(); // Get the value of the selected genre
+        
+        // Filter the books array based on the selected genre
+        const filteredBooks = books.filter(book => book.Genre === genreValue);
+
+        if (filteredBooks.length > 0) {
+            populateTable(filteredBooks); // Display only the filtered books in the table
+        } else {
+            alert("No books found for the selected genre!");
+            populateTable([]); // Clear the table if no books are found
+        }
     } else {
-        alert('Book not found!');
+        alert("Please select a genre to filter!");
+    }
+}
+
+//reset table
+function resetFilter() {
+    populateTable(books); // Display all books
+}
+
+//search function with search bar
+function searchBooks() {
+    // Get the search input value
+    const searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
+
+    if (searchInput === "") {
+        alert("Please enter a search term!");
+        return;
+    }
+
+    // Filter books matching the search input in any field
+    const filteredBooks = books.filter(book =>
+        book.Title.toLowerCase().includes(searchInput) ||
+        book.Genre.toLowerCase().includes(searchInput) ||
+        book.Author.toLowerCase().includes(searchInput)
+    );
+
+    if (filteredBooks.length > 0) {
+        populateTable(filteredBooks); // Display matched books in the table
+    } else {
+        alert("No books found matching the search term.");
+        populateTable([]); // Clear table if no matches are found
     }
 }
 
 
-
-
-function searchBook() {
-    const bookId = parseInt(document.getElementById("updateId").value.trim(), 10);
-    const bookIndex = books.findIndex(b => b.ID === bookId);
-
-    if (book) {
-        document.getElementById("updateForm").classList.remove("hidden");
-        document.getElementById("updateTitle").value = book.title;
-        document.getElementById("updateGenre").value = book.genre;
-        document.getElementById("updateAuthor").value = book.author;
-        document.getElementById("updateDate").value = book.dateOfPublication;
-    } else {
-        alert("Book not found!");
-    }
-}
-
-// Update book details
+// Update book details dinamically
 function updateBook() {
     const bookId = parseInt(document.getElementById("updateId").value.trim(), 10);
     const bookTitle = document.getElementById("updateTitle").value.trim();
@@ -174,7 +231,8 @@ async function addBook() {
         Title: document.getElementById('title').value,
         Genre: document.getElementById('genre').value,
         Author: document.getElementById('author').value,
-        PublicationDate: document.getElementById('publicationDate').value
+        PublicationDate: document.getElementById('publicationDate').value,
+        Status: document.getElementById('status').value || 'Available'
     };
 
     try {

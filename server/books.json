@@ -1,10 +1,18 @@
 [
   {
+    "ID": 1,
+    "Title": "Harry Potter and the chamber of secrets",
+    "Genre": "Fantasy",
+    "Author": "J.K. Rowling",
+    "PublicationDate": "2024-11-07",
+    "Status": "Reserved"
+  },
+  {
     "ID": 2,
     "Title": "Bible",
     "Genre": "Religious",
-    "Author": "Jesus",
-    "PublicationDate": "2024-11-26",
+    "Author": "undefined",
+    "PublicationDate": "2024-11-07",
     "Status": "Reserved"
   },
   {
@@ -790,5 +798,12 @@
     "Author": "Fyodor Dostoevsky",
     "PublicationDate": "1880-11-01",
     "Status": "Available"
+  },
+  {
+    "ID": 101,
+    "Title": "The perks of being a wallflower",
+    "Genre": "Romance",
+    "Author": "Stephen Chbosky",
+    "PublicationDate": "2024-11-13"
   }
 ]

@@ -135,6 +135,19 @@ body {
     border-color: #0056b3; /* Match border with background */
 }
 
+.filterSection button {
+    background-color: #0056b3; /* Primary color */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0.5rem; /* Space between buttons */
+}
+
 .filterSection {
     display: none; /* Hidden by default */
 }
@@ -242,6 +255,7 @@ body {
 }
 
 
+
 /* Search Section */
 .search-section {
     display: flex;
@@ -296,54 +310,76 @@ body {
     background-color: #2c3e50;
 }
 
-/* Form */
+/* Book Form Styling */
 .book-form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 1.5rem 0;
+    justify-content: center;
+    padding: 1.5rem;
 }
 
 .book-form.hidden {
     display: none;
 }
 
+.book-form.active {
+    display: flex;
+}
+
 .form-group {
-    flex: 1 1 calc(50% - 1rem);
+    flex: 1 1 calc(50% - 1rem); 
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .form-group label {
-    margin-bottom: 0.5rem;
     font-weight: bold;
-    color: var(--navy);
+    color: #333;
+    font-size: 1rem;
 }
 
-.form-group input {
+.form-group input,
+.book-form select {
     padding: 0.8rem;
-    border: 1px solid var(--dark-gray);
-    border-radius: 5px;
     font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.book-form select:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+    outline: none;
 }
 
 .book-form button {
-    background-color: var(--primary-green);
-    color: var(--white);
-    font-weight: bold;
+    background-color: #0056b3; 
+    color: #fff;
     padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
     font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
     margin-top: 1rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end; 
 }
 
 .book-form button:hover {
-    background-color: #16a085;
+    background-color: #003f88; 
+    transform: translateY(-2px); 
 }
+
+.book-form button:active {
+    background-color: #002f66; 
+    transform: translateY(0); 
+}
+
 
 /* Table Section */
 table {

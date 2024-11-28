@@ -51,36 +51,35 @@ app.get('/books', (req, res) => {
 app.post('/books', (req, res) => {
     const newBook = req.body;
 
-    console.log('Received New Book:', newBook); // Debugging
-
     fs.readFile(booksFilePath, 'utf8', (err, data) => {
         if (err) {
-            console.error('Error reading books.json:', err);
-            return res.status(500).send('Error reading books data.');
+            return res.status(500).send("Error reading books data.");
         }
 
-        let books = [];
-        try {
-            // If the file is empty, start with an empty array
-            books = data ? JSON.parse(data) : [];
-        } catch (parseError) {
-            console.error('Error parsing books.json:', parseError);
-            return res.status(500).send('Error parsing books data.');
-        }
+        let books = JSON.parse(data);
 
-        // Assign a new ID to the book
+        // Create a new ID for the book
         const newBookId = books.length > 0 ? books[books.length - 1].ID + 1 : 1;
-        newBook.ID = newBookId;
 
-        books.push(newBook);
+        // Reorder keys to ensure ID comes first
+        const orderedBook = {
+            ID: newBookId,
+            Title: newBook.Title,
+            Genre: newBook.Genre,
+            Author: newBook.Author,
+            PublicationDate: newBook.PublicationDate,
+            Status: newBook.Status
+        };
 
-        fs.writeFile(booksFilePath, JSON.stringify(books, null, 2), (writeErr) => {
-            if (writeErr) {
-                console.error('Error writing to books.json:', writeErr);
-                return res.status(500).send('Error saving books data.');
+        // Add the ordered book to the array
+        books.push(orderedBook);
+
+        // Save the updated books array
+        fs.writeFile(booksFilePath, JSON.stringify(books, null, 2), (err) => {
+            if (err) {
+                return res.status(500).send("Error saving new book data.");
             }
-            console.log('New Book Added:', newBook); // Debugging
-            res.status(201).json(newBook);
+            res.status(201).json(books); // Send updated book list as response
         });
     });
 });
@@ -128,40 +127,31 @@ app.put('/books/:id', (req, res) => {
 
 // Route to delete a book by ID
 app.delete('/books/:id', (req, res) => {
-    const bookId = parseInt(req.params.id);
+    const bookId = parseInt(req.params.id, 10);
 
     fs.readFile(booksFilePath, 'utf8', (err, data) => {
         if (err) {
-            console.error("Error reading books data:", err);
             return res.status(500).send("Error reading books data.");
         }
 
-        let books;
-        try {
-            books = JSON.parse(data);
-        } catch (parseError) {
-            console.error("Error parsing books data:", parseError);
-            return res.status(500).send("Error parsing books data.");
+        let books = JSON.parse(data);
+        const bookIndex = books.findIndex(b => b.ID === bookId);
+
+        if (bookIndex !== -1) {
+            books.splice(bookIndex, 1); // Remove the book from the array
+
+            fs.writeFile(booksFilePath, JSON.stringify(books, null, 2), (err) => {
+                if (err) {
+                    return res.status(500).send("Error saving updated books data.");
+                }
+                res.status(200).send("Book deleted successfully.");
+            });
+        } else {
+            res.status(404).send("Book not found.");
         }
-
-        const bookIndex = books.findIndex(book => book.ID === bookId);
-
-        if (bookIndex === -1) {
-            return res.status(404).json({ error: "Book not found" });
-        }
-
-        // Remove the book from the array
-        books.splice(bookIndex, 1);
-
-        fs.writeFile(booksFilePath, JSON.stringify(books, null, 2), (err) => {
-            if (err) {
-                console.error("Error updating books data:", err);
-                return res.status(500).send("Error updating books data.");
-            }
-            res.status(200).send('Book deleted successfully');
-        });
     });
 });
+
 
 // Start the server
 app.listen(3000, () => {
