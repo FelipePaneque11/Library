@@ -26,17 +26,21 @@ function populateTable(bookList) {
                 <td>${book.Genre}</td>
                 <td>${book.Author}</td>
                 <td>${book.PublicationDate}</td>
-                <td>${book.Status}</td>
+                <td class="bookStatus">${book.Status}</td>
             `;
 
             tableBody.appendChild(row);
         });
+
+        // Apply background color based on status
+        changeTableColor();
     } else {
         const emptyRow = document.createElement("tr");
         emptyRow.innerHTML = `<td colspan="6" style="text-align: center;">No books to display</td>`;
         tableBody.appendChild(emptyRow);
     }
 }
+
 
 function toggleFormAdd() {
     const buttonAdd = document.querySelector("#addBtn");
@@ -258,7 +262,18 @@ async function addBook() {
     }
 }
 
+function changeTableColor() {
+    const statusCells = document.querySelectorAll(".bookStatus");
 
+    statusCells.forEach(cell => {
+        if (cell.textContent === "Borrowed") {
+            cell.style.color = "red";
+        } else if (cell.textContent === "Available") {
+            cell.style.color = "green";
+        } else if(cell.textContent === "Reserved") {
+            cell.style.color = "orange";
+        }
+    });
+}
 
-
-
+ 

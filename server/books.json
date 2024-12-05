@@ -138,7 +138,7 @@
   {
     "ID": 18,
     "Title": "Dracula",
-    "Genre": "Gothic Horror",
+    "Genre": "Horror",
     "Author": "Bram Stoker",
     "PublicationDate": "1897-05-26",
     "Status": "Available"
@@ -265,7 +265,7 @@
   },
   {
     "ID": 34,
-    "Title": "The Shining",
+    "Title": "IT",
     "Genre": "Horror",
     "Author": "Stephen King",
     "PublicationDate": "1977-01-28",
@@ -330,7 +330,7 @@
   {
     "ID": 42,
     "Title": "Frankenstein",
-    "Genre": "Gothic Horror",
+    "Genre": "Horror",
     "Author": "Mary Shelley",
     "PublicationDate": "1818-01-01",
     "Status": "Available"
@@ -338,7 +338,7 @@
   {
     "ID": 43,
     "Title": "Dracula",
-    "Genre": "Gothic Horror",
+    "Genre": "Horror",
     "Author": "Bram Stoker",
     "PublicationDate": "1897-05-26",
     "Status": "Available"
@@ -529,10 +529,10 @@
   },
   {
     "ID": 67,
-    "Title": "The Book Thief",
+    "Title": "Outlander",
     "Genre": "Historical Fiction",
-    "Author": "Markus Zusak",
-    "PublicationDate": "2005-03-14",
+    "Author": "Diana Gabaldon",
+    "PublicationDate": "2024-12-03",
     "Status": "Reserved"
   },
   {
@@ -585,7 +585,7 @@
   },
   {
     "ID": 74,
-    "Title": "The Shining",
+    "Title": "1922",
     "Genre": "Horror",
     "Author": "Stephen King",
     "PublicationDate": "1977-01-28",
@@ -804,6 +804,7 @@
     "Title": "The perks of being a wallflower",
     "Genre": "Romance",
     "Author": "Stephen Chbosky",
-    "PublicationDate": "2024-11-13"
+    "PublicationDate": "2024-11-13",
+    "Status": "Available"
   }
 ]

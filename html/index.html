@@ -11,8 +11,9 @@
         <nav>
             <h1 class="title">Library Admin</h1>
             <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#" onclick="dashboard()" id="dashboard">Dashboard</a></li>
+                <li><a href="#" >Settings</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
         </nav>
@@ -108,7 +109,6 @@
                 <label for="Tragedy">Tragedy</label>
             </div>
             <button type="submit" class="filter-btn" onclick="filterBooks()">Filter</button>
-            <button type="submit" class="reset-btn" onclick="resetFilter()">Reset</button>
         </div>
 
         <!-- Update Toggle -->
@@ -154,6 +154,7 @@
         <!-- Table Section -->
         <section class="container">
             <h3 class="section-title">Books List</h3>
+            <button type="submit" class="reset-btn" onclick="resetFilter()">Reset</button>
             <table id="booksTable">
                 <thead>
                     <tr>
@@ -169,11 +170,36 @@
                 </tbody>
             </table>
         </section>
+        <hr>
     </main>
     
+
+    <!-- Dashboard Container -->
+    <div class="dashboard" id="dashboardSection">
+        <!-- Container for both charts -->
+        <h1 class="h1dashboard">Dashboard</h1>
+        <div class="textDashboard">
+            <h2>Status Distribution</h2>
+            <h2>Genre Distribution</h2>
+        </div>
+
+        <div class="charts-container">
+            <!-- Status Bar Chart -->
+            <div class="chart-item">
+                <canvas id="statusPieChart" width="400" height="200"></canvas>
+            </div>
+            <!-- Genre Bar Chart -->
+            <div class="chart-item">
+                <canvas id="genreBarChart" width="500" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>&copy; 2024 Library Admin. Designed with care by <a href="https://github.com/FelipePaneque11">Felipe Paneque</a>.</p>
     </footer>
     <script src="/script.js"></script>
+    <script src="/graphs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--importing chartJs-->
 </body>
 </html>

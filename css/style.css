@@ -135,7 +135,8 @@ body {
     border-color: #0056b3; /* Match border with background */
 }
 
-.filterSection button {
+.reset-btn, .filter-btn{
+    float: right;
     background-color: #0056b3; /* Primary color */
     color: #fff;
     padding: 0.8rem 1.5rem;
@@ -423,6 +424,69 @@ table td {
 .delete-btn:hover {
     background-color: #c0392b;
 }
+
+
+
+/* Dashboard container */
+.dashboard {
+    display: block;
+    padding: 4rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    max-width: 1000px; /* Adjust as needed */
+    margin: 2rem auto;
+}
+
+.h1dashboard{
+    text-align: center;
+    margin-bottom: 55px;
+    margin-top: -35px;
+}
+
+.textDashboard{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Container for charts */
+.charts-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Space between charts */
+    flex-wrap: wrap; /* Allow charts to stack on smaller screens */
+}
+
+.chart-item h2 {
+    text-align: center; /* Center the headings */
+    margin-bottom: 10px; /* Space between the heading and the chart */
+    font-size: 1.5rem; /* Adjust font size as needed */
+    color: #333; /* Optional: color of the heading */
+}
+
+/* Chart item styling */
+.chart-item {
+    flex: 1; /* Equal width for each chart */
+    max-width: 48%; /* Optional: limit width */
+    display: flex;
+    justify-content: center; /* Center canvas inside the div */
+}
+
+/* Canvas styling */
+.dashboard canvas {
+    max-width: 100%; /* Full width for responsiveness */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    align-self: center;
+}
+
+
+/* Hide the main content */
+.hidden {
+    display: none;
+}
+
 
 /* Footer */
 .footer {
