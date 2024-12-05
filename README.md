@@ -7,26 +7,29 @@ The **Library Admin** project is a web-based application that allows users to ma
 ## Features
 
 1. **CRUD Functionalities**:
+   ![crud Screenshot](imgsREADME/crud.png)
+
 
    - **Create**: Add new books to the library collection.
    - **Read**: View all books in the collection in a structured table.
    - **Update**: Modify the details of an existing book.
    - **Delete**: Remove books from the collection.
 
-2. **Filter and Search**:
+3. **Filter and Search**:
 
    - Filter books by genre using radio buttons.
    - Search books dynamically by title, author, or genre using a search bar.
 
-3. **Data Visualization**:
+4. **Data Visualization**:
 
    - A **Pie Chart** that shows the distribution of book statuses (Available, Reserved, Borrowed).
    - A **Bar Graph** that visualizes the number of books per genre.
 
-4. **Interactive Dashboard**:
-
+5. **Interactive Dashboard**:
+   ![Dashboard Screenshot](imgsREADME/dashboard.png)
    - A dedicated dashboard section that displays the graphs.
    - Easy navigation between the main CRUD interface and the dashboard.
+     
 
 ## Setup and Installation
 
@@ -60,6 +63,7 @@ The **Library Admin** project is a web-based application that allows users to ma
 ### Main Interface
 
 - The main interface displays all books in a table format with options to add, update, delete, or filter books.
+![table Screenshot](imgsREADME/table.png)
 
 ### CRUD Functionalities
 
